@@ -1,0 +1,143 @@
+body {
+    background-image: url("../images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-color: aliceblue, 0.5;
+}
+
+
+/*frame principal*/
+
+.row {
+    /*align-items:inherit;*/
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+/*tamaño columnas del frame principal "grande"*/
+
+.column {
+    float: left;
+    margin-bottom: 3%;
+}
+
+.left {
+    width: 68%;
+}
+
+.right {
+    width: 32%;
+}
+
+h1 {
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 250%;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.video {
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.prova {
+    margin-left: 2%;
+    padding: 5px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+
+/*BUTTONS CONFIG*/
+
+.buttons {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: larger;
+    display: inline-block;
+    color: #FFF;
+    background: #7F8C8D;
+    padding: 7px 20px;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 100px;
+    margin: 10px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.blue {
+    background: #3498DB;
+    box-shadow: 0px 5px 0px 0px #2980B9;
+}
+
+.blue:hover {
+    background: #39a0e5;
+}
+
+.blue:active {
+    box-shadow: 0px 2px 0px 0px #2980B9;
+}
+
+.green {
+    background: #2ECC71;
+    box-shadow: 0px 5px 0px 0px #27AE60;
+}
+
+.green:hover {
+    background: #32db78;
+}
+
+.green:active {
+    box-shadow: 0px 2px 0px 0px #27AE60;
+}
+
+.red {
+    background: #E74C3C;
+    box-shadow: 0px 5px 0px 0px #C0392B;
+}
+
+.red:hover {
+    background: #ff5242;
+}
+
+.red:active {
+    box-shadow: 0px 2px 0px 0px #C0392B;
+}

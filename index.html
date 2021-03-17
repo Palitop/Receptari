@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptari</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="js/controlador.js"></script>
+    <script src="js/controladorVideo.js"></script>
+    <!--<script src="js/index.js"></script>-->
+</head>
+
+<body>
+    <h1>3 bocadillos que te quitarán el hambre</h1>
+    <div class="row">
+        <div class="column left">
+            <div class="video-container">
+                <video controls width=100% height=auto class="video" id="video" preload="metadata">
+                    <!-- Safari/Chrome support FALTAN OTROS NAVEGADORES, SE SUPONE QUE TODOS LOS LEEN ASI-->
+                    <source src="recetas.mp4" type="video/mp4">
+                    <track label="English" kind="subtitles" srclang="en" src="captions/vtt/subEnglish.vtt">
+                    <track label="Catala" kind="subtitles" srclang="en" src="captions/vtt/subCatala.vtt">
+                    <track label="Español" kind="subtitles" srclang="es" src="captions/vtt/subEspañol.vtt" default>
+                </video>
+            </div>
+        </div>
+        <div class="column right">
+            <div class="prova" width=100% height=auto>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eveniet deserunt, aliquid, illo aliquam beatae quia quod laboriosam neque error molestias placeat ipsum provident modi animi commodi. Quia, voluptate doloremque!</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column buttons">
+            <a class="button blue">Recepta 1</a>
+        </div>
+        <div class="column buttons">
+            <a class="button red">Recepta 2</a>
+        </div>
+        <div class="column buttons">
+            <a class="button green">Recepta 3</a>
+        </div>
+    </div>
+    <script>
+        var video = document.getElementById("video");
+
+        let receptes = document.createElement('track');
+        receptes.id = 'receptes';
+        receptes.kind = 'chapters';
+        receptes.src = 'texttracks/receptes.vtt';
+        receptes.default = 'true';
+
+        video.appendChild(receptes);
+
+        var allTracks = video.textTracks;
+        var receptesTrack = allTracks[0];
+        var receptesCues = receptesTrack.cues;
+
+        var botones = document.querySelectorAll('div.button > a');
+
+
+        botones[0].addEventListener("mousedown", function() {
+            video.currentTime = receptesCues.getCuebyId(0).startTime;
+        });
+        botones[1].addEventListener("mousedown", function() {
+            video.currentTime = receptesCues.getCuebyId(1).startTime;
+        });
+        botones[2].addEventListener("mousedown", function() {
+            video.currentTime = receptesCues.getCuebyId(2).startTime;
+        });
+
+        function draw(v, c, w, h) {
+            if (v.paused || v.ended)
+                return false;
+            c.drawImage(v, 0, 0, w, h);
+            setTimeout(draw, 20, v, c, w, h);
+        }
+    </script>
+</body>
+
+</html>
