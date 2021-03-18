@@ -9,8 +9,7 @@ body {
 
 .row {
     /*align-items:inherit;*/
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 2%;
 }
 
 
@@ -18,7 +17,7 @@ body {
 
 .column {
     float: left;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
 }
 
 .left {
@@ -30,8 +29,7 @@ body {
 }
 
 h1 {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 2%;
     text-align: center;
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 250%;
