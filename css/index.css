@@ -28,6 +28,11 @@ body {
     width: 32%;
 }
 
+img {
+    -webkit-filter: drop-shadow(4px 4px 0 white) drop-shadow(-4px -4px 0 white);
+    filter: drop-shadow(4px 4px 0 white) drop-shadow(-4px -4px 0 white);
+}
+
 h1 {
     margin: 2%;
     text-align: center;

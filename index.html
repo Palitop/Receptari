@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receptari</title>
-    <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href="css/videoPlayer.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <!--<script src="js/index.js"></script>-->
@@ -26,6 +26,7 @@
 
                 <video controls class="video" width="100%" height="auto" id="video" preload="metadata" poster="images/miniatura.jpg">
                     <source src="recetas.mp4" type="video/mp4"></source>
+                    <track id="Recetas" kind="chapters" srclang="es" src="receptes.vtt" type="text/vtt" default>
                 </video>
 
                 <div class="video-controls hidden" id="video-controls">
@@ -116,24 +117,23 @@
             </svg>
         </div>
         <div class="column right">
-            <div class="prova" width=100% height=auto>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eveniet deserunt, aliquid, illo aliquam beatae quia quod laboriosam neque error molestias placeat ipsum provident modi animi commodi. Quia, voluptate doloremque!</p>
-            </div>
+            <img src="images/pollo_desmenuzado.png" id="imagen" alt="pimienta_negra">
         </div>
     </div>
     <div class="row" width="100%" height="100%">
         <div class="column buttons">
-            <a class="button blue">Recepta 1</a>
+            <button onclick="onClickButton('1')" class="button blue">Recepta 1</button>
         </div>
         <div class="column buttons">
-            <a class="button red">Recepta 2</a>
+            <button onclick="onClickButton('2')" class="button red">Recepta 2</button>
         </div>
         <div class="column buttons">
-            <a class="button green">Recepta 3</a>
+            <button onclick="onClickButton('3')" class="button green">Recepta 3</button>
         </div>
     </div>
 
     <script src="js/videoPlayer.js"></script>
+    <script src="js/controladorVTT.js"></script>
 </body>
 
 </html>
