@@ -18,6 +18,9 @@ const fullscreenButton = document.getElementById('fullscreen-button');
 const videoContainer = document.getElementById('video-container');
 const fullscreenIcons = fullscreenButton.querySelectorAll('use');
 const pipButton = document.getElementById('pip-button');
+const behindButton = document.getElementById('behind-button');
+const infrontButton = document.getElementById('infront-button');
+const subtitlesButton = document.getElementById('subtitles-button');
 
 const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
@@ -65,6 +68,16 @@ function updateTimeElapsed() {
     const time = formatTime(Math.round(video.currentTime));
     timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
     timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+}
+
+function updateTimeInFront() {
+    let actualTime = video.currentTime;
+    video.currentTime = actualTime + 10;
+}
+
+function updateTimeBehind() {
+    let actualTime = video.currentTime;
+    video.currentTime = actualTime - 10;
 }
 
 function updateProgress() {
@@ -240,6 +253,8 @@ seek.addEventListener('input', skipAhead);
 volume.addEventListener('input', updateVolume);
 volumeButton.addEventListener('click', toggleMute);
 fullscreenButton.addEventListener('click', toggleFullScreen);
+behindButton.addEventListener('click', updateTimeBehind);
+infrontButton.addEventListener('click', updateTimeInFront);
 videoContainer.addEventListener('fullscreenchange', updateFullscreenButton);
 pipButton.addEventListener('click', togglePip);
 
