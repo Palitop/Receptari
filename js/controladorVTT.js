@@ -4,10 +4,14 @@ function onClickButton(button) {
 
     let chapters = textTracks[0];
     let cue;
+    
+    let prova = textTracks[1];
 
     switch (button) {
         case '1':
             cue = chapters.cues[0];
+            prova.mode = 'showing';
+            console.log("Mostrat");
             video.currentTime = cue.startTime;
             break;
         case '2':

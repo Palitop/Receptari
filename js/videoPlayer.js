@@ -21,6 +21,8 @@ const pipButton = document.getElementById('pip-button');
 const behindButton = document.getElementById('behind-button');
 const infrontButton = document.getElementById('infront-button');
 const subtitlesButton = document.getElementById('subtitles-button');
+const subtitles = video.textTracks[1];
+subtitles.mode = 'hidden';
 
 const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
@@ -83,6 +85,14 @@ function updateTimeBehind() {
 function updateProgress() {
     seek.value = Math.floor(video.currentTime);
     progressBar.value = Math.floor(video.currentTime);
+}
+
+function showSubtitle() {
+    if(subtitles.mode == 'hidden') {
+        subtitles.mode = 'showing';
+    } else {
+        subtitles.mode = 'hidden'
+    }
 }
 
 function updateSeekTooltip(event) {
@@ -255,6 +265,7 @@ volumeButton.addEventListener('click', toggleMute);
 fullscreenButton.addEventListener('click', toggleFullScreen);
 behindButton.addEventListener('click', updateTimeBehind);
 infrontButton.addEventListener('click', updateTimeInFront);
+subtitlesButton.addEventListener('click', showSubtitle);
 videoContainer.addEventListener('fullscreenchange', updateFullscreenButton);
 pipButton.addEventListener('click', togglePip);
 
