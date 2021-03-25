@@ -13,7 +13,7 @@ body {
 }
 
 
-/* First row assets*/
+/*First row assets*/
 
 .title {
     grid-column: span 6;
@@ -35,7 +35,7 @@ body {
 }
 
 
-/* Second row assets*/
+/*Second row assets*/
 
 .column {
     grid-row-start: 2;
@@ -60,7 +60,7 @@ body {
 }
 
 
-/* Third row assets*/
+/*Third row assets*/
 
 .buttons_container {
     display: flex;
