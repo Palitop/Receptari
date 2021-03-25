@@ -1,43 +1,27 @@
+html,
 body {
+    margin: 0%;
     background-image: url("../images/fondo.jpg");
-    background-repeat: no-repeat;
-    background-color: aliceblue, 0.5;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 20% 65% 15%;
 }
 
 
-/*frame principal*/
+/* First row assets*/
 
-.row {
-    /*align-items:inherit;*/
+.title {
+    grid-column: span 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 2%;
-}
-
-
-/*tamaño columnas del frame principal "grande"*/
-
-.column {
-    float: left;
-    margin-bottom: 2%;
-}
-
-.left {
-    width: 50%;
-}
-
-.right {
-    width: 50%;
-}
-
-img {
-    -webkit-filter: drop-shadow(4px 4px 0 white) drop-shadow(-4px -4px 0 white);
-    filter: drop-shadow(4px 4px 0 white) drop-shadow(-4px -4px 0 white);
-}
-
-h1 {
-    margin: 2%;
-    text-align: center;
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 250%;
     background-color: white;
     border-style: solid;
     border-color: black;
@@ -50,7 +34,23 @@ h1 {
     -webkit-border-radius: 10px;
 }
 
+
+/* Second row assets*/
+
+.column {
+    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 .video {
+    width: 92%;
+    height: auto;
+    margin: 4%;
     border: 2px;
     border-style: solid;
     border-color: black;
@@ -59,31 +59,22 @@ h1 {
     -webkit-border-radius: 10px;
 }
 
-.prova {
-    margin-left: 2%;
-    padding: 5px;
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
 
-/*BUTTONS CONFIG*/
+/* Third row assets*/
 
-.buttons {
-    width: 33.33%;
+.buttons_container {
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column: span 2;
 }
 
-.button {
+
+/*Buttons*/
+
+.button_recipe {
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     text-decoration: none;
@@ -91,7 +82,7 @@ h1 {
     font-size: larger;
     display: inline-block;
     color: #FFF;
-    background: #7F8C8D;
+    background: #0f8a05;
     padding: 7px 20px;
     white-space: nowrap;
     -webkit-border-radius: 5px;
@@ -106,25 +97,12 @@ h1 {
 }
 
 .controls button[data-state="subtitles"] {
-    height:85%;
-    text-indent:0;
-    font-size:16px;
-    font-size:1rem;
-    font-weight:bold;
-    color:#666;
-    background:#000;
-    border-radius:2px;
-}
-
-.blue {
-    background: #3498DB;
-    box-shadow: 0px 5px 0px 0px #2980B9;
-}
-
-.blue:hover {
-    background: #39a0e5;
-}
-
-.blue:active {
-    box-shadow: 0px 2px 0px 0px #2980B9;
+    height: 85%;
+    text-indent: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666;
+    background: #000;
+    border-radius: 2px;
 }

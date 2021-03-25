@@ -37,6 +37,7 @@ video {
 }
 
 .video-controls {
+    margin: 4%;
     right: 0;
     left: 0;
     padding: 10px;
@@ -175,11 +176,6 @@ button:hover::before {
 
 .fullscreen-button {
     margin-right: 0;
-}
-
-.pip-button svg {
-    width: 26px;
-    height: 26px;
 }
 
 .subtitles-button svg {
