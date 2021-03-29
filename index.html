@@ -7,6 +7,7 @@
     <title>Recetario</title>
     <link href="css/videoPlayer.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="images/favicon.png" rel="shorcut icon" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,7 +31,8 @@
                 <video controls class="video" width="100%" height="auto" id="video" preload="metadata" poster="images/miniatura.jpg">
                     <source src="recetas.mp4" type="video/mp4"></source>
                     <track id="Recetas" kind="chapters" srclang="es" src="texttracks/receptes.vtt" type="text/vtt" default>
-                    <track label="Español" kind="subtitles" srclang="es" src="texttracks/subEsp.vtt" type="text/vtt">
+                    <track label="Español" kind="subtitles" srclang="es" src="texttracks/subEs.vtt" type="text/vtt">
+                    <track id="Ingredientes" kind="metadata" srclang="es" src="texttracks/ingredients.vtt" type="text/vtt">
                 </video>
 
                 <div class="video-controls hidden" id="video-controls">
@@ -140,25 +142,35 @@
         </div>
 
         <div class="column right">
-            <img src="images/pollo_desmenuzado.png" id="imagen" alt="pollo_desmenuzado">
+            <div class="information" id="information">
+                <div class="list_container" id="list_container">
+                </div>
+                
+                <div class="image" id="image_container"> 
+                </div>
+
+                <div class="buy_container" id="buy_container">
+                </div>
+
+            </div>
         </div>
 
         <div class="buttons_container">
-            <button class="button_recipe" onclick="onClickButton('1')">Recepta 1</button>
+            <button class="button_recipe" onclick="onClickButton('1')">Receta 1</button>
         </div>
 
         <div class="buttons_container">
-            <button class="button_recipe" onclick="onClickButton('2')">Recepta 2</button>
+            <button class="button_recipe" onclick="onClickButton('2')">Receta 2</button>
         </div>
 
         <div class="buttons_container">
-            <button class="button_recipe" onclick="onClickButton('3')">Recepta 3</button>
+            <button class="button_recipe" onclick="onClickButton('3')">Receta 3</button>
         </div>
     </div>
 
-
     <script src="js/videoPlayer.js"></script>
     <script src="js/controladorVTT.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

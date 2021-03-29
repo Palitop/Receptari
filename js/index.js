@@ -1,27 +1,8 @@
-// Create the video tag.
-var video = document.createElement("video");
-// Check if this video tag is supported. Feature detection!
-if (video.canPlayType) {
-    // Check for OGG support.
-    //if (video.canPlayType("video/ogg")) {
-    //    video.src = "video.ogg";
-    //}
-    // Check for mp4 support.
-    if (video.canPlayType("video/mp4")) {
-        video.src = "video.mp4";
+var information = document.getElementById('information');
+information.style.width = video.style.width;
+information.style.height = video.style.height;
+document.addEventListener("DOMContentLoaded", function() {
+    if (!getCookie('Popup')) {
+        console.log(video.style.width);
     }
-    // Turn the controls on.
-    video.setAttribute("controls", "controls");
-    document.appendChild(video);
-
-  
-
-} else {
-    var div = document.createElement("div");
-    div.innerHtml = "El teu navegador no suporta el format del video";
-    document.body.appendChild(div);
-}
-
-function capitulo(cues, num){
-    video.currentTime = cues
-}
+});

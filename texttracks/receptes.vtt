@@ -1,10 +1,19 @@
 WEBVTT FILE
 
-00:00:22.000 --> 00:03:41.000
-Recepta 1
+00:00:24.000 --> 00:03:53.999
+{
+  "title":"Receta 1",
+  "ingredients":["Panecillo", "Hummus", "Mozzarella", "Pechuga de pavo", "Limón", "Pimienta Negra"]
+}
 
-00:03:54.000 --> 00:05:13.500
-Recepta 2
+00:03:54.000 --> 00:05:13.999
+{
+  "title":"Receta 2",
+  "ingredients":["Panecillo", "Pollo Desmigado", "Queso Tetilla","Aceite de Oliva"]
+}
 
 00:05:14.000 --> 00:06:42.000
-Recepta 3
+{
+  "title":"Receta 3",
+  "ingredients":["Panecillo", "Crema de Cacahuete", "Arándanos"]
+}

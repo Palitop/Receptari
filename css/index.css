@@ -59,6 +59,46 @@ body {
     -webkit-border-radius: 10px;
 }
 
+.information {
+    width: 92%;
+    height: 84%;
+    margin: 4%;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin: 2%;
+}
+
+.image_container {
+    margin: 2%;
+    color: black;
+}
+
+.product_image {
+    margin: 2%;
+    width: 250px;
+    height: 250px;
+}
+
+.buy_container {
+    margin: 2%;
+    display: inline-block;
+}
+
 
 /*Third row assets*/
 
@@ -68,7 +108,7 @@ body {
     justify-content: center;
     grid-column-start: 1;
     grid-row-start: 3;
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 
