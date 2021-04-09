@@ -1,7 +1,7 @@
 var textTracks = document.querySelector('video').textTracks;
-textTracks[2].mode = 'showing';
+textTracks[4].mode = 'showing';
 textTracks[0].mode = 'showing';
-var ingredientes = textTracks[2];
+var ingredientes = textTracks[4];
 var recipes = textTracks[0];
 var imagen = document.getElementById('image');
 var buyButton = document.getElementById("buy_button");
@@ -67,18 +67,23 @@ function showInterlude () {
         containers[i].innerHTML = "";
             
         let list = document.createElement("ul");
+        let titol = document.createElement("h1");
+        
         
         let json = JSON.parse(recipes.cues[i].text);
         let ingredients = json.ingredients;
+        titol.innerHTML=json.title;
+        list.appendChild(titol);
         
         for (j = 0; j < ingredients.length; j++) {
             let element = document.createElement("li");
             element.innerHTML= ingredients[j];
+            element.classList.add("texto");
             list.appendChild(element);
         }
             
         list.classList.add("list");
-    
+        
         containers[i].appendChild(list);
     }
 }
@@ -87,8 +92,10 @@ function displayElements() {
     let cue = this.activeCues;
     let json = JSON.parse(cue[0].text);
     if(json.src != ""){
+        
         displayIngredient(json);
         displayButton(json);
+        changeRecipe();
     } else{
         showInterlude();
     }
@@ -97,21 +104,23 @@ function displayElements() {
 function changeRecipe() {
     let list_container = document.getElementById('list_container');
     list_container.innerHTML= "";
-    let cue = this.activeCues;
+    //let cue = this.activeCues;
+    let cue = recipes.activeCues;
     let json = JSON.parse(cue[0].text);
     let ingredients = json.ingredients;
     let list = document.createElement("ul");
-    
+    let titol = document.createElement("h1");
+    titol.innerHTML=json.title;
+    list.appendChild(titol);
     for (i = 0; i < ingredients.length; i++) {
         let element = document.createElement("li");
         element.innerHTML= ingredients[i];
+        element.classList.add("texto");
         list.appendChild(element);
     }
     
     list.classList.add("list");
-    
     list_container.appendChild(list);
 }
 
-recipes.addEventListener('cuechange', changeRecipe);
 ingredientes.addEventListener('cuechange', displayElements);

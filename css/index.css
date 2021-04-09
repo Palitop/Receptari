@@ -74,13 +74,18 @@ body {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .list {
     list-style-type: none;
     font-family: 'Gloria Hallelujah', cursive;
-    margin: 2%;
+}
+
+.texto::before { /* Añadimos contenido antes de cada elemento de la lista */
+content: "\2022"; /* Insertamos el marcador */
+padding-right: 8px; /* Establecemos el espacio entre las viñetas y el list item */
+color: red; /* Coloreamos la viñeta */
 }
 
 .image_container {
@@ -134,6 +139,17 @@ body {
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    background: #529752;
+    box-shadow: 0px 5px 0px 0px #4bac5b;
+    outline: none;
+}
+
+.button_recipe:hover{
+    background: #32db78;
+}
+
+.button_recipe:active{
+    box-shadow: 0px 2px 0px 0px #27AE60;
 }
 
 .controls button[data-state="subtitles"] {

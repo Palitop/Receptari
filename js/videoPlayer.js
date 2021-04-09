@@ -20,9 +20,12 @@ const fullscreenIcons = fullscreenButton.querySelectorAll('use');
 const pipButton = document.getElementById('pip-button');
 const behindButton = document.getElementById('behind-button');
 const infrontButton = document.getElementById('infront-button');
-const subtitlesButton = document.getElementById('subtitles-button');
-const subtitles = video.textTracks[1];
-subtitles.mode = 'hidden';
+const subtitlesES = video.textTracks[1];
+const subtitlesCAT = video.textTracks[2];
+const subtitlesEN = video.textTracks[3];
+subtitlesES.mode = 'hidden';
+subtitlesCAT.mode = 'hidden';
+subtitlesEN.mode = 'hidden';
 
 const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
@@ -87,11 +90,41 @@ function updateProgress() {
     progressBar.value = Math.floor(video.currentTime);
 }
 
-function showSubtitle() {
-    if(subtitles.mode == 'hidden') {
-        subtitles.mode = 'showing';
-    } else {
-        subtitles.mode = 'hidden'
+function showSubtitle(tipo) {
+    debugger
+    switch(tipo){
+        case 'ES':
+            if(subtitlesES.mode == 'hidden') {
+                subtitlesEN.mode = 'hidden';
+                subtitlesCAT.mode = 'hidden';
+                subtitlesES.mode = 'showing';
+            } else {
+                subtitlesES.mode = 'hidden';
+            }
+            break;
+        case 'CAT':
+            if(subtitlesCAT.mode == 'hidden') {
+                subtitlesES.mode = 'hidden';
+                subtitlesEN.mode = 'hidden';
+                subtitlesCAT.mode = 'showing';
+            } else {
+                subtitlesCAT.mode = 'hidden';
+            }
+            break;
+        case 'EN':
+            if(subtitlesEN.mode == 'hidden') {
+                subtitlesES.mode = 'hidden';
+                subtitlesCAT.mode = 'hidden';
+                subtitlesEN.mode = 'showing';
+            } else {
+                subtitlesEN.mode = 'hidden';
+            }
+            break;
+        default:
+            subtitlesES.mode = 'hidden';
+            subtitlesCAT.mode = 'hidden';
+            subtitlesEN.mode = 'hidden';
+        break;
     }
 }
 
@@ -192,21 +225,6 @@ function updateFullscreenButton() {
     }
 }
 
-async function togglePip() {
-    try {
-        if (video !== document.pictureInPictureElement) {
-            pipButton.disabled = true;
-            await video.requestPictureInPicture();
-        } else {
-            await document.exitPictureInPicture();
-        }
-    } catch (error) {
-        console.error(error);
-    } finally {
-        pipButton.disabled = false;
-    }
-}
-
 function hideControls() {
     if (video.paused) {
         return;
@@ -221,6 +239,7 @@ function showControls() {
 
 function keyboardShortcuts(event) {
     const { key } = event;
+    debugger
     switch (key) {
         case 'k':
             togglePlay();
@@ -239,8 +258,20 @@ function keyboardShortcuts(event) {
         case 'f':
             toggleFullScreen();
             break;
-        case 'p':
-            togglePip();
+        case 'i':
+            showSubtitle('EN');
+            break;
+        case 'c':
+            showSubtitle('CAT');
+            break;
+        case 'e':
+            showSubtitle('ES');
+            break;
+        case 'ArrowRight':
+            updateTimeInFront();
+            break;
+        case 'ArrowLeft':
+            updateTimeBehind();
             break;
     }
 }
@@ -265,9 +296,7 @@ volumeButton.addEventListener('click', toggleMute);
 fullscreenButton.addEventListener('click', toggleFullScreen);
 behindButton.addEventListener('click', updateTimeBehind);
 infrontButton.addEventListener('click', updateTimeInFront);
-subtitlesButton.addEventListener('click', showSubtitle);
 videoContainer.addEventListener('fullscreenchange', updateFullscreenButton);
-pipButton.addEventListener('click', togglePip);
 
 document.addEventListener('DOMContentLoaded', () => {
     if (!('pictureInPictureEnabled' in document)) {
