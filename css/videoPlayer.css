@@ -41,6 +41,8 @@ video {
     right: 0;
     left: 0;
     padding: 10px;
+    width: 92%;
+    height: 80px;
     position: absolute;
     bottom: 0;
     transition: all 0.2s ease;
@@ -181,21 +183,6 @@ progress::-moz-progress-bar {
     margin-right: 0;
 }
 
-.subtitles-button svg {
-    width: 26px;
-    height: 26px;
-}
-
-.infront-button svg {
-    width: 26px;
-    height: 26px;
-}
-
-.behind-button svg {
-    width: 26px;
-    height: 26px;
-}
-
 .playback-animation {
     pointer-events: none;
     position: absolute;
@@ -295,15 +282,11 @@ input[type=range].volume::-moz-range-thumb {
     display: none;
 }
 
-svg {
+svg,
+.image-subtitle {
     width: 28px;
     height: 28px;
     fill: #FE0900;
     stroke: #FE0900;
     cursor: pointer;
-}
-
-.image-subtitle{
-    width: 24px;
-    height: 24px;
 }

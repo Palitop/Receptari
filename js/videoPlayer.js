@@ -92,9 +92,9 @@ function updateProgress() {
 
 function showSubtitle(tipo) {
     debugger
-    switch(tipo){
+    switch (tipo) {
         case 'ES':
-            if(subtitlesES.mode == 'hidden') {
+            if (subtitlesES.mode == 'hidden') {
                 subtitlesEN.mode = 'hidden';
                 subtitlesCAT.mode = 'hidden';
                 subtitlesES.mode = 'showing';
@@ -103,7 +103,7 @@ function showSubtitle(tipo) {
             }
             break;
         case 'CAT':
-            if(subtitlesCAT.mode == 'hidden') {
+            if (subtitlesCAT.mode == 'hidden') {
                 subtitlesES.mode = 'hidden';
                 subtitlesEN.mode = 'hidden';
                 subtitlesCAT.mode = 'showing';
@@ -112,7 +112,7 @@ function showSubtitle(tipo) {
             }
             break;
         case 'EN':
-            if(subtitlesEN.mode == 'hidden') {
+            if (subtitlesEN.mode == 'hidden') {
                 subtitlesES.mode = 'hidden';
                 subtitlesCAT.mode = 'hidden';
                 subtitlesEN.mode = 'showing';
@@ -124,7 +124,7 @@ function showSubtitle(tipo) {
             subtitlesES.mode = 'hidden';
             subtitlesCAT.mode = 'hidden';
             subtitlesEN.mode = 'hidden';
-        break;
+            break;
     }
 }
 
@@ -239,7 +239,6 @@ function showControls() {
 
 function keyboardShortcuts(event) {
     const { key } = event;
-    debugger
     switch (key) {
         case 'k':
             togglePlay();
